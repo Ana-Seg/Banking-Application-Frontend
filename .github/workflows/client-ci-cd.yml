@@ -17,7 +17,7 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker Image for Frontend
-      run: docker build -t docker push anaseg/banking-application-frontend-latest --build-arg VITE_REACT_APP_BACKEND_BASEURL='${{secrets.VITE_REACT_APP_BACKEND_BASEURL}}' .
+      run: docker build -t anaseg/banking-application-frontend-latest --build-arg VITE_REACT_APP_BACKEND_BASEURL='${{secrets.VITE_REACT_APP_BACKEND_BASEURL}}' .
 
     - name: Push Docker Image to Docker Hub
       run: docker push docker push anaseg/banking-application-frontend-latest
