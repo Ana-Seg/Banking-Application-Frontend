@@ -20,14 +20,14 @@ jobs:
       run: docker build -t anaseg/banking-application-frontend-latest --build-arg VITE_REACT_APP_BACKEND_BASEURL='${{secrets.VITE_REACT_APP_BACKEND_BASEURL}}' .
 
     - name: Push Docker Image to Docker Hub
-      run: docker push docker push anaseg/banking-application-frontend-latest
+      run: docker push anaseg/banking-application-frontend-latest
 
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
       - name: Pull Docker Image from Docker Hub
-        run: docker pull docker push anaseg/banking-application-frontend-latest
+        run: docker pull anaseg/banking-application-frontend-latest
 
       - name: Stop Existing Frontend Container
         run: |
@@ -37,7 +37,7 @@ jobs:
       - name: Run Frontend Docker Container
         run: |
          docker run -d -p 80:3000 --name banking-application-frontend-latest \
-         docker push anaseg/banking-application-frontend-latest
+         anaseg/banking-application-frontend-latest
 
 
 
