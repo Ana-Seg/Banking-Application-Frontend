@@ -17,7 +17,7 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker Image for Frontend
-      run: docker build -t anaseg/banking-application-frontend-latest --build-arg VITE_REACT_APP_BACKEND_BASEURL='${{secrets.VITE_REACT_APP_BACKEND_BASEURL}}' .
+      run: docker build -t anaseg/banking-application-frontend-latest --build-arg VITE_REACT_APP_BACKEND_BASEURL="${{ secrets.VITE_REACT_APP_BACKEND_BASEURL }}" .
 
     - name: Push Docker Image to Docker Hub
       run: docker push anaseg/banking-application-frontend-latest
@@ -29,15 +29,17 @@ jobs:
       - name: Pull Docker Image from Docker Hub
         run: docker pull anaseg/banking-application-frontend-latest
 
-      - name: Stop Existing Frontend Container
+      - name: Stop and Remove Existing Frontend Container
         run: |
-          docker stop banking-application-frontend-latest || echo "No existing backend container found"
-          docker rm banking-application-frontend-latest || echo "No existing backend container found"
+          docker stop banking-application-frontend-latest || echo "No running frontend container found"
+          docker rm banking-application-frontend-latest || echo "No frontend container to remove"
 
       - name: Run Frontend Docker Container
         run: |
-         docker run -d -p 80:3000 --name banking-application-frontend-latest \
-         anaseg/banking-application-frontend-latest
+          docker run -d -p 80:3000 --name banking-application-frontend-latest \
+          -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
+          anaseg/banking-application-frontend-latest
+
 
 
 
