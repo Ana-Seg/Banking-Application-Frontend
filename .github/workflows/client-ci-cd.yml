@@ -29,7 +29,7 @@ jobs:
       - name: Pull Docker Image from Docker Hub
         run: docker pull anaseg/banking-application-frontend-latest
 
-      name: Stop Existing Frontend Container
+      - name: Stop Existing Frontend Container
         run: |
           docker stop banking-application-frontend || echo "No existing backend container found"
           docker rm banking-application-frontend || echo "No existing backend container found"
