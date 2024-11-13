@@ -36,7 +36,7 @@ jobs:
 
       - name: Run Frontend Docker Container
         run: |
-         docker run -d -p 80:3000 --name banking-application:frontend-latest \
+         docker run -d -p 80:3000 --name banking-application-frontend-latest \
          anaseg/banking-application:frontend-latest
 
 
