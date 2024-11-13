@@ -31,8 +31,8 @@ jobs:
 
       - name: Stop Existing Frontend Container
         run: |
-          docker stop banking-application:frontend || echo "No existing backend container found"
-          docker rm banking-application:frontend || echo "No existing backend container found"
+          docker stop banking-application-frontend || echo "No existing backend container found"
+          docker rm banking-application-frontend || echo "No existing backend container found"
 
       - name: Run Frontend Docker Container
         run: |
