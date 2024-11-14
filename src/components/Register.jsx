@@ -34,7 +34,7 @@ const Register = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post( `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/register`,userData, {
+            const response = await axios.post( `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/register`, userData, {
                 headers: { 'Content-Type': 'application/json' }
             });
 
