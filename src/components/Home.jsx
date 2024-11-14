@@ -4,7 +4,7 @@ import bank from "../assets/bank.png";
 
 const Home = () => {
   return (
-    <div className='p-4 sm:p-6 lg:p-8 max-w-full mx-auto mt-16 bg-gray-100 rounded-lg shadow-lg'>
+    <div className='p-4 max-w-1400px] mx-auto mt-16 bg-gray-100 rounded-lg shadow-lg'>
       <div className='text-center'>
         <h1 className='text-4xl sm:text-5xl lg:text-6xl my-8 font-bold'>
           Welcome to <span className='text-blue-800'>BadBank</span>
