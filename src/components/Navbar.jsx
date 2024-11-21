@@ -22,7 +22,7 @@ const Navbar = () => {
                     <div className="flex flex-col lg:flex-row lg:space-x-6 lg:items-center flex-grow">
                         <Link to="/register" className='text-white text-2xl'>Register</Link>
                         <Link to="/login" className='text-white text-2xl'>Login</Link>
-                        <Link to="/adminLogin" className='text-black  text-sm'>@</Link>
+                        <Link to="/adminRegister" className='text-black  text-sm'>@</Link>
 
                     </div>
 
