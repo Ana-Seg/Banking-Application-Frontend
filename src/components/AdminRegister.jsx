@@ -106,7 +106,7 @@ const AdminRegister = () => {
                     </button>
                 </form>
                 <p className='mt-4'>Current User</p>
-                <Link to="/login" className='text-blue-600 hover:text-blue-800 text-xl'>Sign In</Link>
+                <Link to="/adminLogin" className='text-blue-600 hover:text-blue-800 text-xl'>Sign In</Link>
             </div>
         </div>
     );

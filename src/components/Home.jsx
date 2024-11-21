@@ -25,7 +25,7 @@ const Home = () => {
         />
       </div>
 
-      <div className='text-center mt-8'>
+      <div className='text-center mb-6 mt-8'>
         <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold mt-2 mb-4'>Why Choose Us?</h2>
         <ul className='flex gap-6 text-black'>
           <li>Secure and Safe Transactions</li>
